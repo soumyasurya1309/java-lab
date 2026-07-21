@@ -1,0 +1,211 @@
+:root {
+    /* Theme Colors */
+    --primary-dark: #1e293b;
+    --primary-accent: #3b82f6;
+    --accent-gold: #d97706;
+    
+    /* Updated Light Backgrounds */
+    --bg-body: #f8fafc;       /* Very light cool grey-blue for the main page */
+    --bg-card: #ffffff;       /* Pure white for the main container */
+    --bg-input-panel: #fafbfc; /* Slightly warmer off-white for the input side */
+    
+    /* Text & Borders */
+    --text-main: #374151;
+    --text-muted: #6b7280;
+    --border-color: #e2e8f0; /* Softer border color for light theme */
+    
+    /* Status Colors */
+    --success: #10b981;
+    --danger: #ef4444;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    --border-radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg-body); /* Applied new light theme color */
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    border: 1px solid #ffffff; /* Subtle white border for depth */
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0f172a 100%);
+    color: white;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--accent-gold);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-left h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.customer-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.customer-box label {
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.cust-input {
+    background: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--primary-dark);
+    width: 220px;
+    font-weight: 600;
+}
+
+.cust-input:focus {
+    outline: 2px solid var(--accent-gold);
+}
+
+/* Main Layout */
+.main-box {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.input-side, .bill-side {
+    flex: 1;
+    min-width: 350px;
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Updated Input Side Background */
+.input-side {
+    background: var(--bg-input-panel); 
+    border: 1px solid #e5e7eb;
+}
+
+h3 {
+    color: var(--primary-dark);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Forms */
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: white;
+    color: var(--text-main);
+    transition: all 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary-accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Discount Section */
+.discount-section {
+    background: #f0f9ff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #bae6fd;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumya's Clothing Store - Billing System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>Soumya's Clothing Store</h1>
+                <p class="subtitle">Professional Billing System</p>
+            </div>
+            <div class="customer-box">
+                <label for="customerName">Customer:</label>
+                <input type="text" id="customerName" placeholder="Enter Customer Name" class="cust-input">
+            </div>
+        </header>
+        
+        <div class="main-box">
+            <!-- Input Section -->
+            <div class="input-side">
+                <h3>Add Item</h3>
+                
+                <div class="input-grid">
+                    <div class="form-group">
+                        <label>Brand</label>
+                        <select id="brand">
+                            <option value="">-- Select Brand --</option>
+                            <option value="Nike">Nike</option>
+                            <option value="Adidas">Adidas</option>
+                            <option value="Puma">Puma</option>
+                            <option value="Levi's">Levi's</option>
+                            <option value="H&M">H&M</option>
+                            <option value="Zara">Zara</option>
+                            <option value="Uniqlo">Uniqlo</option>
+                            <option value="Other">Other (Type Custom)</option>
+                        </select>
+                        <input type="text" id="custom-brand" placeholder="Enter Custom Brand" style="display:none; margin-top:5px;">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Item Type</label>
+                        <select id="name">
+                            <option value="">-- Select Item --</option>
+                            <option value="T-Shirt">T-Shirt</option>
+                            <option value="Jeans">Jeans</option>
+                            <option value="Shirt">Shirt</option>
+                            <option value="Shorts">Shorts</option>
+                            <option value="Jacket">Jacket</option>
+                            <option value="Sweater">Sweater</option>
+                            <option value="Dress">Dress</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Size</label>
+                        <select id="size">
+                            <option value="">-- Select Size --</option>
+                            <option value="S">S (Small)</option>
+                            <option value="M">M (Medium)</option>
+                            <option value="L">L (Large)</option>
+                            <option value="XL">XL (Extra Large)</option>
+                            <option value="XXL">XXL (Double XL)</option>
+                            <option value="XXXL">XXXL</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Color</label>
+                        <select id="color">
+                            <option value="">-- Select Color --</option>
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Red">Red</option>
+                            <option value="Green">Green</option>
+                            <option value="Grey">Grey</option>
+                            <option value="Navy">Navy</option>
+                            <option value="Beige">Beige</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Price (₹)</label>
+                        <input type="number" id="price" placeholder="0.00" step="0.01">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <input type="number" id="qty" placeholder="1" min="1" value="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label>GST Rate</label>
+                        <select id="gst-rate">
+                            <option value="5">5%</option>
+                            <option value="12">12%</option>
+                            <option value="18" selected>18%</option>
+                            <option value="28">28%</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button onclick="addItem()" class="btn-primary">Add to Bill</button>
+            </div>
+
+            <!-- Bill & Discount Section -->
+            <div class="bill-side">
+                <h3>Bill Details</h3>
+                
+                <!-- Discount Controls -->
+                <div class="discount-section">
+                    <label>Apply Discount</label>
+                    <div class="discount-controls">
+                        <input type="number" id="discountPercent" placeholder="%" min="0" max="100" step="0.5">
+                        <span class="discount-label">%</span>
+                    </div>
+                    <small style="color: #7f8c8d; display: block; margin-top: 5px;">Discount applies to subtotal before GST</small>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list">
+                        <tr id="empty"><td colspan="5">No items yet</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="totals">
+                    <p>Subtotal: <span id="sub">₹0.00</span></p>
+                    <p class="discount-display" id="discount-display">Discount (0%): <span id="disc-val">₹0.00</span></p>
+                    <hr>
+                    <p>CGST (Half): <span id="cgst">₹0.00</span></p>
+                    <p>SGST (Half): <span id="sgst">₹0.00</span></p>
+                    <hr>
+                    <p class="grand-total"><strong>Grand Total: <span id="final">₹0.00</span></strong></p>
+                </div>
+                
+                <div class="action-buttons">
+                    <button onclick="window.print()" id="printBtn" disabled>Print Bill</button>
+                    <button onclick="clearBill()" id="clearBtn" style="background-color: #4a5568; margin-top: 10px;">Clear Bill</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
