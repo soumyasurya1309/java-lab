@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT Student Portal - Grading System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">SIT</div>
+                <div class="brand-info">
+                    <h1>Symbiosis Institute of Technology</h1>
+                    <p>Symbiosis International (Deemed University), Pune</p>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Admissions</a>
+                <a href="#">Academics</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- LOGIN SECTION -->
+    <div id="loginSection" class="login-wrapper">
+        <div class="login-card">
+            <div class="card-top-border"></div>
+            <div class="card-content">
+                <h2>Student Portal Access</h2>
+                <p>Enter your Enrollment Number and Password to continue.</p>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Enrollment Number</label>
+                        <input type="text" id="username" placeholder="24070521062" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••••" required>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-login">LOGIN</button>
+                </form>
+
+                <div id="loginMessage" class="message"></div>
+
+                <div class="support-text">
+                    <p>For technical support, contact <a href="mailto:helpdesk@sitpune.edu.in">helpdesk@sitpune.edu.in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GRADING SECTION (Hidden initially) -->
+    <div id="gradingSection" class="grading-wrapper" style="display: none;">
+        <div class="grading-container">
+            <div class="grading-header">
+                <h2>Enter Student Marks</h2>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+
+            <!-- Input Form -->
+            <form id="gradingForm" class="grading-form">
+                <div class="form-row">
+                    <input type="text" id="studentName" placeholder="Student Name" required>
+                    <input type="number" id="math" placeholder="Maths (0-100)" min="0" max="100" required>
+                    <input type="number" id="science" placeholder="Science (0-100)" min="0" max="100" required>
+                    <input type="number" id="english" placeholder="English (0-100)" min="0" max="100" required>
+                    <input type="number" id="history" placeholder="History (0-100)" min="0" max="100" required>
+                </div>
+                <button type="submit" class="btn-add">Add Record</button>
+            </form>
+
+            <!-- Results Table -->
+            <div class="results-area">
+                <h3>Student Results</h3>
+                <table class="grade-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Total</th>
+                            <th>%</th>
+                            <th>Grade</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultBody">
+                        <!-- Rows added by JS -->
+                    </tbody>
+                </table>
+                <div id="emptyMsg" class="empty-msg">No records found. Add a student above.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Symbiosis Institute of Technology</h4>
+                <p>Senapati Bapat Road, Pune - 411016</p>
+                <p>Maharashtra, India</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Notice Board</a></li>
+                    <li><a href="#">Timetable</a></li>
+                    <li><a href="#">Examination</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Symbiosis Institute of Technology. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
