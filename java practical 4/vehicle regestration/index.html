@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarathi Parivahan - Vehicle Registration Validation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="govt-container">
+        <!-- Header Section -->
+        <header class="govt-header">
+            <!-- Using a placeholder for the Emblem, replace src with actual SVG/PNG -->
+            <div class="national-emblem">
+                <svg width="60" height="60" viewBox="0 0 60 60" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="30" cy="30" r="25" fill="none" stroke="white" stroke-width="2"/>
+                    <path d="M30 10 L35 25 L50 25 L38 35 L43 50 L30 40 L17 50 L22 35 L10 25 L25 25 Z" fill="white"/>
+                </svg>
+            </div>
+            <div class="header-text">
+                <h1>Ministry of Road Transport & Highways</h1>
+                <h2>Government of India</h2>
+                <h3>Sarathi Parivahan</h3>
+                <p class="subtitle">Vehicle Registration Number Validator</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content-wrapper">
+            <div class="form-panel">
+                <div class="panel-header">
+                    <h4>Validation Input</h4>
+                </div>
+                <div class="form-body">
+                    <p class="instruction-text">
+                        Enter the vehicle registration number below. The format must be <strong>XXDDSSNNNN</strong> (e.g., MH05AB1234).
+                    </p>
+
+                    <div class="input-group">
+                        <label for="registrationInput" class="form-label">Registration Number</label>
+                        <div class="input-control-wrapper">
+                            <input 
+                                type="text" 
+                                id="registrationInput" 
+                                class="form-input" 
+                                placeholder="Enter Registration No." 
+                                autocomplete="off"
+                                maxlength="10"
+                            >
+                            <button id="validateBtn" class="govt-btn">Validate</button>
+                        </div>
+                    </div>
+
+                    <!-- Result Display -->
+                    <div id="result" class="result-box hidden" role="alert" aria-live="assertive"></div>
+
+                    <!-- Information Box -->
+                    <div class="info-box">
+                        <h5>Registration Format Criteria</h5>
+                        <ul class="criteria-list">
+                            <li><strong>First 2 chars:</strong> State/Union Territory Code (e.g., MH, DL, KA)</li>
+                            <li><strong>Next 2 chars:</strong> District Code (Digits)</li>
+                            <li><strong>Next 2 chars:</strong> Series Code (Letters)</li>
+                            <li><strong>Last 4 chars:</strong> Unique Vehicle Number (Digits)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="govt-footer">
+            <p>&copy; 2026 Ministry of Road Transport & Highways. All Rights Reserved.</p>
+            <p class="footer-note">This is a demo validation tool. Not an official government portal.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
