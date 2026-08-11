@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class-Based Marks Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Marks Class</h1>
+            <p>Soumya suryawanshi PRN - 24070521062</p>
+        </header>
+
+        <main class="card">
+            <div class="input-section">
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName" placeholder="e.g. Alice">
+                </div>
+                <div class="form-group">
+                    <label for="studentMark">Mark (0-100)</label>
+                    <input type="number" id="studentMark" placeholder="e.g. 95" min="0" max="100">
+                </div>
+                <button id="addBtn" class="btn-add">Add Student</button>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat-card max">
+                    <span class="label">Top Performer</span>
+                    <span id="max-name" class="value">--</span>
+                    <span id="max-score" class="sub-label">0</span>
+                </div>
+                <div class="stat-card min">
+                    <span class="label">Needs Improvement</span>
+                    <span id="min-name" class="value">--</span>
+                    <span id="min-score" class="sub-label">0</span>
+                </div>
+                <div class="stat-card average">
+                    <span class="label">Class Average</span>
+                    <span id="avg-score" class="value">--</span>
+                </div>
+            </div>
+
+            <div class="list-section">
+                <h2>Class Roster</h2>
+                <div id="student-list" class="student-grid"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

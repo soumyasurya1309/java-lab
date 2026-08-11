@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Calculator | Soumya Suryawanshi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>Shopping Cart Calculator</h1>
+            <p>Manage your purchases efficiently</p>
+        </header>
+
+        <!-- Input Section -->
+        <div class="card input-card">
+            <h2>Add New Product</h2>
+            <div class="input-group">
+                <input type="text" id="productName" placeholder="Product Name (e.g., Pen, Laptop)">
+                <input type="number" id="price" placeholder="Price (₹)" min="0" step="0.50">
+                <input type="number" id="quantity" placeholder="Quantity" min="1" value="1">
+                <button onclick="addProduct()" class="btn-add">Add Product</button>
+            </div>
+        </div>
+
+        <!-- Table Section -->
+        <div class="card table-card">
+            <h2>Cart Items</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product Name</th>
+                            <th>Price (₹)</th>
+                            <th>Qty</th>
+                            <th>Total (₹)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartBody">
+                        <!-- Rows injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="card summary-card">
+            <div class="totals-grid">
+                <div class="total-box">
+                    <span class="label">Total Amount</span>
+                    <span class="value" id="totalAmount">₹0.00</span>
+                </div>
+                <div class="total-box discount">
+                    <span class="label">Discount (20%)</span>
+                    <span class="value" id="discountAmount">-₹0.00</span>
+                </div>
+                <div class="total-box final">
+                    <span class="label">Final Amount</span>
+                    <span class="value" id="finalAmount">₹0.00</span>
+                </div>
+            </div>
+
+            <div class="lists-grid">
+                <!-- Low Cost List -->
+                <div class="list-box">
+                    <h3>Low-Cost Items (Price < ₹1000)</h3>
+                    <ul id="lowCostList"></ul>
+                    <p id="noLowCost" class="empty-msg">No low-cost items found.</p>
+                </div>
+
+                <!-- Expensive List -->
+                <div class="list-box">
+                    <h3>Expensive Items (Price > ₹1000)</h3>
+                    <ul id="expensiveList"></ul>
+                    <p id="noExpensive" class="empty-msg">No expensive items found.</p>
+                </div>
+            </div>
+            
+            <div class="item-summary-box">
+                <h3>Item Summary</h3>
+                <ul id="itemSummary" style="margin-top: 10px;"></ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>Soumya Suryawanshi</span>
+            <span>PRN: 24070521062</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
