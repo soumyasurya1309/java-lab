@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Sign-In & Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+        </div>
+        
+        <!-- Login Section -->
+        <div class="form-container" id="loginSection">
+            <h2>Sign-In</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                    <div class="error-message" id="loginEmailError">Please enter a valid email address.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                    <div class="error-message" id="loginPasswordError">Incorrect password format.</div>
+                </div>
+
+                <div class="error-message" id="loginGlobalError" style="text-align: center; margin-bottom: 10px; font-weight: bold;"></div>
+
+                <button type="submit" class="submit-btn">Sign-In</button>
+            </form>
+            
+            <div class="terms">
+                By continuing, you agree to Amazon's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.
+            </div>
+            
+            <div class="divider-text">
+                <h5 aria-level="5">New to Amazon?</h5>
+            </div>
+            
+            <button class="create-account-btn" id="showRegisterBtn">Create your Amazon account</button>
+        </div>
+
+        <!-- Registration Section -->
+        <div class="form-container" id="registerSection" style="display: none;">
+            <h2>Create account</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name">Your name</label>
+                    <input type="text" id="name" name="name" placeholder="First and last name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError">Please enter a valid email address containing '@'.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="At least 8 characters" required>
+                    <div class="info-message">Passwords must be at least 8 characters, contain 1 capital letter and 1 special character.</div>
+                    <div class="error-message" id="passwordError">Password must be at least 8 characters, contain 1 capital letter and 1 special character.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordCheck">Re-enter password</label>
+                    <input type="password" id="passwordCheck" name="passwordCheck" required>
+                    <div class="error-message" id="passwordCheckError">Passwords must match.</div>
+                </div>
+
+                <div class="error-message" id="registerGlobalError" style="text-align: center; margin-bottom: 10px; font-weight: bold;"></div>
+
+                <button type="submit" class="submit-btn">Continue</button>
+            </form>
+            
+            <div class="terms">
+                By creating an account, you agree to Amazon's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="login-link">
+                Already have an account? <a href="#" id="showLoginBtn">Sign in</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
