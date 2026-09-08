@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Flow | Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Focus Flow</h1>
+            <p>Organize your day with clarity</p>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Enter a new task...">
+            <button id="addBtn">Add Task</button>
+        </div>
+
+        <div class="task-info">
+            <span id="taskCount">0 tasks pending</span>
+        </div>
+
+        <ul id="taskList">
+        </ul>
+
+        <p id="emptyMessage" class="hidden">Start by adding your first task.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

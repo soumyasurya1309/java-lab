@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form Case Study</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <p class="mandatory-text"><span class="asterisk">*</span> Mandatory to fill</p>
+        
+        <form id="signupForm" novalidate>
+            <div class="form-group">
+                <label for="firstname">Firstname: <span class="asterisk">*</span></label>
+                <input type="text" id="firstname" name="firstname" required placeholder="Enter your first name">
+                <span class="error-message" id="firstnameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Lastname:</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Enter your last name">
+            </div>
+
+            <div class="form-group">
+                <label>Birthday:</label>
+                <div class="date-group">
+                    <select id="day" name="day">
+                        <option value="">Day</option>
+                    </select>
+                    <select id="month" name="month">
+                        <option value="">Month</option>
+                    </select>
+                    <select id="year" name="year">
+                        <option value="">Year</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username: <span class="asterisk">*</span></label>
+                <input type="text" id="username" name="username" required placeholder="Choose a username">
+                <span class="error-message" id="usernameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com">
+                <span class="error-message" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="website">Website:</label>
+                <input type="url" id="website" name="website" placeholder="https://yourwebsite.com">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password: <span class="asterisk">*</span></label>
+                <input type="password" id="password" name="password" required placeholder="Enter password">
+                <span class="error-message" id="passwordError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="repassword">Re-password: <span class="asterisk">*</span></label>
+                <input type="password" id="repassword" name="repassword" required placeholder="Confirm password">
+                <span class="error-message" id="repasswordError"></span>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the terms & conditions. <span class="asterisk">*</span></label>
+                <span class="error-message" id="termsError"></span>
+            </div>
+
+            <button type="submit" id="submitBtn">Sign up</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
