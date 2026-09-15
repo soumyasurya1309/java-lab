@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Admission Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="gymForm">
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-name">Name</th>
+                    <th class="col-value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" id="name" name="name"></td>
+                </tr>
+                <tr>
+                    <td>Sex</td>
+                    <td>
+                        <label><input type="radio" name="sex" value="Male"> Male</label><br>
+                        <label><input type="radio" name="sex" value="Female" checked> Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Eye color</td>
+                    <td>
+                        <select id="eyeColor" name="eyeColor">
+                            <option value="green">green</option>
+                            <option value="brown">brown</option>
+                            <option value="blue">blue</option>
+                            <option value="hazel">hazel</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Check all that apply</td>
+                    <td>
+                        <label><input type="checkbox" name="height" value="Over 6 feet tall"> Over 6 feet tall</label><br>
+                        <label><input type="checkbox" name="weight" value="Over 200 pounds"> Over 200 pounds</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="desc-label">Describe your athletic ability:</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="textarea-cell">
+                        <textarea id="ability" name="ability"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="submit-cell">
+                        <input type="submit" value="Enter my information">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

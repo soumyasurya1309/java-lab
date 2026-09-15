@@ -1,0 +1,166 @@
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+form {
+    width: 100%;
+    max-width: 750px; /* Bigger width */
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Nice soft shadow */
+    border: none;
+}
+
+th, td {
+    padding: 20px 24px;
+    font-size: 16px;
+    border-bottom: 1px solid #edf2f7;
+    color: #2d3748;
+}
+
+th {
+    background-color: #4f46e5; /* Vibrant indigo */
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 24px;
+}
+
+th.col-name, th.col-value {
+    text-align: left;
+}
+
+/* Control column sizes from the header */
+th.col-name {
+    width: 35%;
+}
+
+th.col-value {
+    width: 65%;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Subtle hover effect on rows */
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Make labels in the left column bold, excluding colspan cells */
+tbody tr td:first-child:not([colspan]) {
+    font-weight: 600;
+    color: #4a5568;
+    vertical-align: top;
+    padding-top: 30px; /* Align nicely with inputs */
+}
+
+/* Inputs, Selects, and Textarea */
+input[type="text"], select, textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background-color: #f7fafc;
+    color: #2d3748;
+}
+
+input[type="text"]:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #4f46e5;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+label:last-child {
+    margin-bottom: 0;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin: 0 12px 0 0;
+    width: 22px;
+    height: 22px;
+    accent-color: #4f46e5; /* Indigo color for checkboxes and radios */
+    cursor: pointer;
+}
+
+/* Special styling for the textarea label row */
+.desc-label {
+    font-weight: 600;
+    color: #4a5568;
+    padding-bottom: 10px;
+    border-bottom: none;
+}
+
+.textarea-cell {
+    padding-top: 0;
+}
+
+textarea {
+    height: 140px;
+    resize: vertical;
+}
+
+/* Submit button styling */
+.submit-cell {
+    text-align: center;
+    background-color: #f8fafc;
+    padding: 30px;
+}
+
+input[type="submit"] {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 48px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+    letter-spacing: 0.5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #4338ca;
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+    transform: translateY(-2px);
+}
+
+input[type="submit"]:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4);
+}

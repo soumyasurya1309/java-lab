@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Admission Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>🏋️ Gym Admission Form</h2>
+
+        <form id="gymForm">
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" autocomplete="off">
+            <span id="nameError" class="error"></span>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age" min="1" max="120">
+            <span id="ageError" class="error"></span>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+            <span id="emailError" class="error"></span>
+
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number" maxlength="10">
+            <span id="mobileError" class="error"></span>
+
+            <label for="plan">Membership Plan</label>
+            <select id="plan" name="plan">
+                <option value="">-- Select Plan --</option>
+                <option value="monthly">Monthly</option>
+                <option value="quarterly">Quarterly</option>
+                <option value="yearly">Yearly</option>
+            </select>
+            <span id="planError" class="error"></span>
+
+            <button type="submit" id="submitBtn">
+                <span>Join Now</span>
+                <div class="spinner" id="spinner"></div>
+            </button>
+
+            <p id="result" class="success"></p>
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
