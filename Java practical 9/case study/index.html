@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminar Schedule Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>📅 Seminar Schedule Planner</h1>
+        <p class="subtitle">Click any day to view topics & track your session</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="3">Day</th>
+                        <th colspan="3">Seminar</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Schedule</th>
+                        <th rowspan="2">Topic</th>
+                    </tr>
+                    <tr>
+                        <th>Begin</th>
+                        <th>End</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="day-row" data-day="Monday" onclick="selectDay('Monday')">
+                        <td class="day-cell">Monday</td>
+                        <td class="time-cell begin">8:00 a.m.</td>
+                        <td class="time-cell end">5:00 p.m.</td>
+                        <td>Introduction to XML<br>Validity: DTD and Relax NG</td>
+                    </tr>
+                    <tr class="day-row" data-day="Tuesday" onclick="selectDay('Tuesday')">
+                        <td class="day-cell" rowspan="3">Tuesday</td>
+                        <td class="time-cell begin">8:00 a.m.</td>
+                        <td class="time-cell end">11:00 a.m.</td>
+                        <td rowspan="2">XPath</td>
+                    </tr>
+                    <tr class="day-row" data-day="Tuesday" onclick="selectDay('Tuesday')">
+                        <td class="time-cell begin">11:00 a.m.</td>
+                        <td class="time-cell end">2:00 p.m.</td>
+                    </tr>
+                    <tr class="day-row" data-day="Tuesday" onclick="selectDay('Tuesday')">
+                        <td class="time-cell begin">2:00 p.m.</td>
+                        <td class="time-cell end">5:00 p.m.</td>
+                        <td>XSL Transformations</td>
+                    </tr>
+                    <tr class="day-row" data-day="Wednesday" onclick="selectDay('Wednesday')">
+                        <td class="day-cell">Wednesday</td>
+                        <td class="time-cell begin">8:00 a.m.</td>
+                        <td class="time-cell end">12:00 p.m.</td>
+                        <td>XSL Formatting Objects</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="status-card">
+            <p id="message">No day selected yet</p>
+        </div>
+
+        <div class="storage-info">
+            <div class="storage-item">
+                <span class="storage-label">Last Visited (localStorage)</span>
+                <span class="storage-value" id="localValue">—</span>
+            </div>
+            <div class="storage-item">
+                <span class="storage-label">Session Clicks (sessionStorage)</span>
+                <span class="storage-value" id="sessionValue">0</span>
+            </div>
+        </div>
+
+        <button class="btn-reset" onclick="clearData()">🔄 Clear All Data</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Implementation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Preference</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✨ Theme Preference</h1>
+            <p class="subtitle">Choose your vibe and make it stick</p>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-light" onclick="setTheme('light')">
+                <span class="icon">☀️</span>
+                <span class="label">Light Theme</span>
+            </button>
+            <button class="btn btn-dark" onclick="setTheme('dark')">
+                <span class="icon">🌙</span>
+                <span class="label">Dark Theme</span>
+            </button>
+            <button class="btn btn-reset" onclick="clearTheme()">
+                <span class="icon">🔄</span>
+                <span class="label">Clear Preference</span>
+            </button>
+        </div>
+
+        <div class="status-card">
+            <p id="message">No theme selected yet</p>
+        </div>
+
+        <div class="storage-info">
+            <div class="storage-item">
+                <span class="storage-label">localStorage</span>
+                <span class="storage-value" id="localValue">—</span>
+            </div>
+            <div class="storage-item">
+                <span class="storage-label">sessionStorage</span>
+                <span class="storage-value" id="sessionValue">—</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
