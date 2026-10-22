@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Food Order Dashboard</title>
+  <!-- jQuery Library -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 30px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 2.5em;
+    }
+    h2 {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-weight: normal;
+    }
+    .btn-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    button {
+      padding: 12px 30px;
+      font-size: 18px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+    button:active {
+      transform: translateY(0);
+    }
+    #orderTable {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: center;
+    }
+    th {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+    tr:hover {
+      background-color: #e9ecef;
+    }
+    .status-preparing {
+      background: #ffc107;
+      color: #333;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .status-ready {
+      background: #28a745;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .status-delivered {
+      background: #17a2b8;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .summary {
+      margin-top: 30px;
+      padding: 20px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .summary h3 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+    .summary p {
+      font-size: 18px;
+      color: #555;
+      margin: 10px 0;
+    }
+    .summary .highlight {
+      font-weight: bold;
+      color: #667eea;
+      font-size: 22px;
+    }
+    #errorMessage {
+      display: none;
+      text-align: center;
+      color: #dc3545;
+      font-size: 18px;
+      padding: 20px;
+      background: #f8d7da;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🍽️ Online Food Order Dashboard</h1>
+    <h2>Real-time Order Management</h2>
+
+    <div class="btn-container">
+      <button id="loadBtn">View Orders</button>
+    </div>
+
+    <table id="orderTable">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer Name</th>
+          <th>Food Item</th>
+          <th>Quantity</th>
+          <th>Total Amount</th>
+          <th>Order Status</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+      </tbody>
+    </table>
+
+    <div id="errorMessage">
+      <strong>⚠️ Error:</strong> Unable to load orders.json. Please try again later.
+    </div>
+
+    <div class="summary" id="summary" style="display: none;">
+      <h3>Order Summary</h3>
+      <p>Total Number of Orders: <span class="highlight" id="totalOrders">0</span></p>
+      <p>Total Sales Amount: <span class="highlight" id="totalSales">$0.00</span></p>
+    </div>
+  </div>
+
+  <script>
+    $("#loadBtn").click(function() {
+      $.getJSON("orders.json", function(data) {
+        $("#tableBody").empty();
+        var totalOrders = 0;
+        var totalSales = 0;
+
+        $.each(data, function(index, order) {
+          var statusClass = "";
+          if (order.status === "Preparing") {
+            statusClass = "status-preparing";
+          } else if (order.status === "Ready") {
+            statusClass = "status-ready";
+          } else if (order.status === "Delivered") {
+            statusClass = "status-delivered";
+          }
+
+          $("#tableBody").append(`
+            <tr>
+              <td>${order.orderId}</td>
+              <td>${order.customerName}</td>
+              <td>${order.foodItem}</td>
+              <td>${order.quantity}</td>
+              <td>$${order.totalAmount.toFixed(2)}</td>
+              <td><span class="${statusClass}">${order.status}</span></td>
+            </tr>
+          `);
+          totalOrders++;
+          totalSales += order.totalAmount;
+        });
+
+        $("#totalOrders").text(totalOrders);
+        $("#totalSales").text("$" + totalSales.toFixed(2));
+        $("#summary").show();
+
+      }).fail(function() {
+        $("#errorMessage").show();
+        $("#summary").hide();
+      });
+    });
+  </script>
+</body>
+</html>

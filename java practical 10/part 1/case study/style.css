@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    padding: 40px 20px;
+    color: #eee;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00d2ff, #928dff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: #aab;
+    margin-top: 8px;
+}
+
+.icon {
+    -webkit-text-fill-color: initial;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    animation: fadeUp 0.6s ease both;
+}
+
+.table-card { animation-delay: 0.15s; }
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.input-group { margin-bottom: 16px; }
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    color: #bcc;
+    margin-bottom: 6px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+input::placeholder { color: #778; }
+
+input:focus {
+    outline: none;
+    border-color: #00d2ff;
+    box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.2);
+}
+
+.btn {
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-green {
+    width: 100%;
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
+.btn-blue {
+    width: auto;
+    padding: 10px 18px;
+    background: linear-gradient(90deg, #396afc, #2948ff);
+}
+
+.btn-purple {
+    width: auto;
+    padding: 8px 14px;
+    background: linear-gradient(90deg, #a855f7, #7c3aed);
+    font-size: 0.85rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 12px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00d2ff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #dde;
+}
+
+tbody tr {
+    transition: background 0.25s;
+    animation: fadeUp 0.4s ease both;
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.empty-msg {
+    text-align: center;
+    color: #889;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.json-output {
+    margin-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.json-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.json-header h3 {
+    font-size: 1rem;
+    color: #aab;
+}
+
+#jsonDisplay {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 16px;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    color: #38ef7d;
+    max-height: 250px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}

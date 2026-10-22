@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Aarav Sharma", "department": "Computer Science", "marks": 92 },
+  { "id": 2, "name": "Priya Patel", "department": "Information Technology", "marks": 88 },
+  { "id": 3, "name": "Rohan Mehta", "department": "Electronics", "marks": 75 },
+  { "id": 4, "name": "Sneha Joshi", "department": "Computer Science", "marks": 95 },
+  { "id": 5, "name": "Karan Desai", "department": "Mechanical", "marks": 70 }
+]

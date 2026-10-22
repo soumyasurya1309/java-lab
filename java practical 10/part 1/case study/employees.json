@@ -1,0 +1,7 @@
+[
+  { "id": "101", "name": "Alice Johnson",  "department": "Engineering",    "salary": "75000" },
+  { "id": "102", "name": "Bob Smith",      "department": "Marketing",      "salary": "62000" },
+  { "id": "103", "name": "Clara Davis",    "department": "Human Resources","salary": "58000" },
+  { "id": "104", "name": "David Lee",      "department": "Finance",        "salary": "80000" },
+  { "id": "105", "name": "Eva Martinez",   "department": "Engineering",    "salary": "90000" }
+]
